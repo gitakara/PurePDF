@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PurePDF</title>
+  
+  <!-- TAMBAHKAN LINK GOOGLE MATERIAL ICONS DI SINI -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <link rel="stylesheet" href="style.css">
+  <!-- Library PDF-Lib tetap menggunakan CDN agar file JS tetap ringan -->
+  <script src="https://unpkg.com/pdf-lib"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PurePDF</h1>
+      <h2>Manajemen PDF langsung di browser Anda.</h2>
+      <p>Tanpa instalasi aplikasi, tanpa server, tanpa upload data. - 100% aman!</p>
+      
+      <!-- UBAH TOMBOL DARK MODE JADI STRUKTUR INI -->
+      <button id="themeToggle" class="btn-theme-toggle">
+        <span class="material-icons" id="themeIcon">dark_mode</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="upload-area">
+        <div class="dropzone" id="dropzone">
+          <p>Seret file PDF ke sini atau klik untuk upload</p>
+          <span class="sub-text">Privasi aman: File Anda tidak dikirim ke server manapun.</span>
+        </div>
+        <ul id="fileList" class="file-list"></ul>
+      </section>
+
+      <section class="controls">
+        <div class="action-buttons">
+          <button id="mergeBtn" class="btn-primary">Gabungkan PDF</button>
+          <button id="splitBtn" class="btn-primary">Pisahkan PDF</button>
+        </div>
+
+        <div class="settings">
+          <div class="input-group">
+            <label for="pageRange">Range Halaman (untuk Split):</label>
+            <input type="text" id="pageRange" placeholder="Contoh: 1-3, 5">
+          </div>
+          <div class="input-group">
+            <label for="fileName">Nama File Hasil:</label>
+            <input type="text" id="fileName" placeholder="PDFKilat_Hasil">
+          </div>
+        </div>
+      </section>
+
+      <div id="progress" class="status-msg"></div>
+
+      <section class="preview-area">
+        <h3>Preview Hasil</h3>
+        <iframe id="preview"></iframe>
+        <button id="downloadBtn" class="btn-success" disabled>Download Sekarang</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 - Gitakara Ardhytama</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
